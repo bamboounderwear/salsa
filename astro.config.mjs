@@ -2,11 +2,13 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import icon from "astro-icon";
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://payflo.dev',
-  output: 'static',
+  output: 'server',
+  adapter: cloudflare(),
   prefetch: true,
   integrations: [
     tailwind(),
@@ -52,7 +54,7 @@ export default defineConfig({
   ],
   image: {
     service: {
-      entrypoint: 'astro/assets/services/sharp'
+      entrypoint: 'astro/assets/services/noop'
     }
   }
 });
