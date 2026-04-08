@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "wrangler pages dev",
+    "deploy": "astro build && wrangler pages deploy dist",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.0.0",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
     "@fontsource-variable/inter": "^5.0.15",
@@ -19,6 +21,7 @@
     "tailwindcss": "^3.3.6"
   },
   "devDependencies": {
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "wrangler": "^4.0.0"
   }
 }
